@@ -1,9 +1,9 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Seance index{% endblock %}
+{% block title %}Seance{% endblock %}
 
 {% block body %}
-    <h1>Seance index</h1>
+    <h1 class="text-primary">Seance</h1>
     <a class="btn btn-primary px-4" href="{{ path('app_seance_new') }}">+</a>
     <table class="table table-striped table-hover">
         <thead>
@@ -27,16 +27,15 @@
                 <td>{{ seance.film.nom }}</td>
                 <td>{{ seance.salle.num }}</td>
                 <td>
-                    <a class="btn btn-sm btn-primary"  href="{{ path('app_seance_show', {'id': seance.id}) }}">show</a>
+                    <a class="btn btn-sm btn-primary" href="{{ path('app_seance_show', {'id': seance.id}) }}">show</a>
                     <a class="btn btn-sm btn-warning" href="{{ path('app_seance_edit', {'id': seance.id}) }}">edit</a>
                 </td>
             </tr>
         {% else %}
             <tr>
-                <td colspan="5">no records found</td>
+                <td colspan="7" class="text-center text-secondary">no records found</td>
             </tr>
         {% endfor %}
         </tbody>
     </table>
-
 {% endblock %}
